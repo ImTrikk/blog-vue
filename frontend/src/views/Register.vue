@@ -1,13 +1,11 @@
 <template>
- <div>
-  Login in here
- </div>
+ <div>Register in here</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
- name: "Login",
+ name: "Register",
 });
 </script>

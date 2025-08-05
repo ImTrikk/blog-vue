@@ -1,15 +1,12 @@
 <template>
- <div >
-  <p>Welcome to the home page!</p>
-  <p>This is where you can find the latest updates and nmyews.</p>
+ <div>
+  <h1>About section</h1>
  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-
 export default defineComponent({
- name: "Home",
- path: '/'
+ name: "About",
 });
 </script>
