@@ -1,12 +1,20 @@
+<script setup lang="ts">
+defineProps<{
+ label?: string;
+ type?: 'button' | 'submit' | 'reset';
+}>();
+
+defineEmits<{
+ click: [];
+}>();
+</script>
+
 <template>
- <button :type="type" class="h-10 bg-blue-500 text-white rounded-md px-4 cursor-pointer" @click="$emit('click')">
+ <button 
+  :type="type || 'button'"
+  @click="$emit('click')"
+  class="text-xs h-8 px-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+ >
   <slot>{{ label }}</slot>
  </button>
 </template>
-
-<script setup lang="ts">
-defineProps<{
- type: "button" | "submit" | "reset";
- label?: string;
-}>();
-</script>

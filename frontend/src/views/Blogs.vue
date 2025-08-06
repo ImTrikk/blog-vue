@@ -3,6 +3,7 @@ import { ref } from "vue";
 import BlogCard from "../components/BlogCard.vue";
 import Button from "../components/Button.vue";
 import Modal from "../components/Modal.vue";
+import { PlusIcon } from "@heroicons/vue/16/solid";
 
 const isModalOpen = ref(false);
 const postTitle = ref("");
@@ -65,11 +66,13 @@ const handleImageUpload = (event: Event) => {
 
 <template>
  <div class="h-screen px-40 bg-violet-50">
-  <div class="flex justify-between items-center py-5">
+  <div class="flex justify-between items-center">
    <p>Blogs Listings</p>
-   <Button label="Create New Post" type="button" @click="handleCreateNewPost" />
+   <Button type="button" @click="handleCreateNewPost" class="flex items-center gap-2">
+    <PlusIcon class="w-4 h-4" /> Create New Post
+   </Button>
   </div>
-  <div class="grid gap-6">
+  <div class="grid gap-6 pt-5">
    <BlogCard
     v-for="post in blogPosts"
     :key="post.id"
