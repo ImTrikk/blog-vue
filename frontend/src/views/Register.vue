@@ -5,19 +5,9 @@
   <form @submit.prevent="handleRegister" class="space-y-4">
    <div>
     <input
-     v-model="firstName"
+     v-model="username"
      type="text"
-     placeholder="First Name"
-     class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-     required
-    />
-   </div>
-
-   <div>
-    <input
-     v-model="lastName"
-     type="text"
-     placeholder="Last Name"
+     placeholder="User Name"
      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
      required
     />
@@ -89,16 +79,14 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 
-const firstName = ref("");
-const lastName = ref("");
+const username = ref("");
 const email = ref("");
 const password = ref("");
 const confirmPassword = ref("");
 
 const isFormValid = computed(() => {
  return (
-  firstName.value.trim() !== "" &&
-  lastName.value.trim() !== "" &&
+  username.value.trim() !== "" &&
   email.value.trim() !== "" &&
   password.value.length >= 8 &&
   password.value === confirmPassword.value
@@ -112,8 +100,7 @@ const handleRegister = () => {
  }
 
  console.log("Registering user with:", {
-  firstName: firstName.value,
-  lastName: lastName.value,
+  username: username.value,
   email: email.value,
   password: password.value,
  });
