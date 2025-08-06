@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar.vue";
 </script>
 
 <template>
- <Navbar />
- <!-- Page Content -->
- <!-- <main class="px-6 lg:px-40 py-8"> -->
- <router-view class="pt-20" />
- <!-- </main> -->
+ <div class="min-h-screen">
+  <Navbar />
+  <!-- Page Content -->
+  <router-view class="pt-10"/>
+ </div>
 </template>

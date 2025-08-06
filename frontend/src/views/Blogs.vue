@@ -14,17 +14,101 @@ const imagePreview = ref<string | null>(null);
 const blogPosts = [
  {
   id: 1,
-  title: "My First Blog",
-  post: "This is the intro to my blog post.",
-  username: "jane_doe",
-  date: "2023-10-01",
+  title: "Getting Started with TypeScript",
+  post: "TypeScript adds static typing to JavaScript, making it more robust...",
+  username: "tech_sarah",
+  date: "2023-12-15",
  },
  {
   id: 2,
-  title: "Vue is Awesome",
-  post: "Here's why I love Vue.js so much...",
-  username: "john_doe",
-  date: "2023-10-01",
+  title: "Modern CSS Techniques",
+  post: "Exploring CSS Grid, Flexbox, and Custom Properties...",
+  username: "web_designer",
+  date: "2023-12-10",
+ },
+ {
+  id: 3,
+  title: "REST API Best Practices",
+  post: "Learn how to design clean and efficient REST APIs...",
+  username: "api_expert",
+  date: "2023-12-05",
+ },
+ {
+  id: 4,
+  title: "Frontend Testing Strategies",
+  post: "Comprehensive guide to testing Vue.js applications...",
+  username: "test_master",
+  date: "2023-12-01",
+ },
+ {
+  id: 5,
+  title: "Vue 3 Composition API Deep Dive",
+  post: "Exploring the power of Vue 3's Composition API and its benefits...",
+  username: "vue_enthusiast",
+  date: "2023-11-28",
+ },
+ {
+  id: 6,
+  title: "Web Performance Optimization",
+  post: "Tips and tricks for improving your website's loading speed...",
+  username: "perf_guru",
+  date: "2023-11-25",
+ },
+ {
+  id: 7,
+  title: "State Management in Vue",
+  post: "Comparing Vuex, Pinia and other state management solutions...",
+  username: "state_master",
+  date: "2023-11-22",
+ },
+ {
+  id: 8,
+  title: "Responsive Design Patterns",
+  post: "Building websites that work seamlessly across all devices...",
+  username: "design_pro",
+  date: "2023-11-19",
+ },
+ {
+  id: 9,
+  title: "Authentication Best Practices",
+  post: "Secure authentication implementations for modern web apps...",
+  username: "security_expert",
+  date: "2023-11-16",
+ },
+ {
+  id: 10,
+  title: "Git Workflow Strategies",
+  post: "Effective branching and merging strategies for teams...",
+  username: "git_master",
+  date: "2023-11-13",
+ },
+ {
+  id: 11,
+  title: "Docker for Developers",
+  post: "Getting started with containerization for web applications...",
+  username: "docker_pro",
+  date: "2023-11-10",
+ },
+ {
+  id: 12,
+  title: "API Security Fundamentals",
+  post: "Protecting your APIs from common security threats...",
+  username: "security_guru",
+  date: "2023-11-07",
+ },
+ {
+  id: 13,
+  title: "Modern JavaScript Features",
+  post: "Exploring ES2022 and beyond - new JavaScript capabilities...",
+  username: "js_ninja",
+  date: "2023-11-04",
+ },
+ {
+  id: 14,
+  title: "Web Accessibility Guidelines",
+  post: "Making your web applications accessible to everyone...",
+  username: "a11y_advocate",
+  date: "2023-11-01",
  },
 ];
 
@@ -81,18 +165,19 @@ const closeModal = () => {
 </script>
 
 <template>
- <div class="h-screen px-40 bg-violet-50">
-  <div class="flex justify-between items-center">
-   <p>Blogs Listings</p>
+ <div class="min-h-screen px-4 lg:px-40 py-8 bg-violet-50 pt-28">
+  <div class="flex justify-between items-center mb-8">
+   <h1 class="text-3xl font-bold text-gray-800">Blogs</h1>
    <Button
     type="button"
     @click="handleCreateNewPost"
-    class="absolute bottom-30 right-40 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+    class="fixed bottom-8 right-8 z-50 flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
    >
     <PlusIcon class="w-4 h-4" />
    </Button>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-5">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
    <BlogCard
     v-for="post in blogPosts"
     :key="post.id"
@@ -103,6 +188,7 @@ const closeModal = () => {
     :date="post.date"
    />
   </div>
+
   <Modal :isOpen="isModalOpen" :onClose="closeModal" label="Create New Post">
    <template #default>
     <form @submit.prevent="handleCreatePost" class="space-y-6">
