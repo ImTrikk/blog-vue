@@ -1,6 +1,6 @@
 <!-- pages/Login.vue -->
 <template>
- <div class="max-w-md mx-auto mt-12">
+ <div class="max-w-md mx-auto">
   <h2 class="text-2xl font-bold mb-4">Login to MinBlogs</h2>
 
   <form @submit.prevent="handleLogin" class="space-y-4">
