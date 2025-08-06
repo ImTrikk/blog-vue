@@ -64,7 +64,7 @@ const handleImageUpload = (event: Event) => {
 </script>
 
 <template>
- <div class="px-40 py-10">
+ <div class="h-screen px-40 bg-violet-50">
   <div class="flex justify-between items-center py-5">
    <p>Blogs Listings</p>
    <Button label="Create New Post" type="button" @click="handleCreateNewPost" />

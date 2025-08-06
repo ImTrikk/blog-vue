@@ -6,6 +6,6 @@ import Navbar from "./components/Navbar.vue";
  <Navbar />
  <!-- Page Content -->
  <!-- <main class="px-6 lg:px-40 py-8"> -->
- <router-view />
+ <router-view class="pt-20" />
  <!-- </main> -->
 </template>

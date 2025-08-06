@@ -1,5 +1,7 @@
 <template>
- <div>Confessions</div>
+ <div class="h-screen px-40 bg-violet-50">
+  Confessions
+ </div>
 </template>
 
 <script lang="ts">

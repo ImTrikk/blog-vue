@@ -1,5 +1,5 @@
 <template>
- <header class="py-2 px-6 lg:px-40">
+ <header class="fixed  w-full py-2 px-6 lg:px-40">
   <div class="flex justify-between items-center">
    <!-- Logo/Brand -->
    <router-link to="/" class="text-xl font-bold text-blue-600"
